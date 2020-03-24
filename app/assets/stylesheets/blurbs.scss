@@ -1,0 +1,86 @@
+// Place all the styles related to the Blurbs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.edit-button {
+  padding-left: 9px !important;
+  // padding-top: 8px !important;
+  text-align: center;
+  font-size: 1.2em !important;
+  -moz-border-radius: 20px/20px !important;
+  -webkit-border-radius: 20px 20px !important;
+  border-radius: 20px/20px !important; 
+  width: 35px;
+  height: 35px;
+  color: black;
+}
+#hash-col {
+  ul {
+    padding-left: 0;
+  }
+}
+// #fixed-until {
+//   position:fixed; top:10; left: 10;
+// }
+#blurb-hash-holder {
+  margin-top: 45px;
+  min-height: 500px;
+  h1 {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+}
+.dashed {
+  border: dashed 1px orange;
+}
+
+.blurb {
+  margin-bottom: 20px;
+}
+
+.tag {
+  list-style: none;
+  span {
+    padding: 2px 6px;
+  }
+  padding-bottom: 3px;
+}
+body.blurbs-controller.index-action {
+  .navbar-default {
+    background-color: #f2f2f2;
+    border-bottom: none;
+  }
+}
+.blurb-tags {
+  li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+#new-blurb {
+  // position: fixed;
+  float: right;
+  right: 10px;
+  z-index: 2;
+}
+#new-blurb-button {
+  position: fixed;
+  display: block;
+  height: 50px !important;
+  clear: both;
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+  margin-top: -20px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+.author-name {
+  display: none;
+}
+.xxx {
+  text-align: center !important;
+  margin-top: 0;
+  padding: 0;
+  
+}

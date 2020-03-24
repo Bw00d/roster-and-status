@@ -1,0 +1,56 @@
+<%= content_for :title, "Blurbs" %>
+<div class="row">
+<%= content_for :second_header do %>
+	<div id="new-blurb-button">
+		<%= link_to 'New Blurb', new_blurb_path, class: 'btn btn-small btn-success', id: "new-blurb" %>
+	</div>
+<% end %>
+</div>	
+<div id="blurb-hash-holder" class="container-fluid ">
+	<div class="row">
+		<div id="hash-col" class="col-sm-3">
+			<div id="fixed-until"> <!-- Fix the tags to left for large screens and top for small -->
+			<h1>Tags</h1>
+		
+			<ul>
+				<li class="tag"><span class="lg-gray-bg"><%= link_to 'my blurbs', blurbs_path %></span></li>
+				<% tag_cloud Blurb.tag_counts, %w[s m l] do |tag| %>
+				<li class="tag"><span class="lg-gray-bg"><%= link_to tag.name, tag_path(tag.name) %></span></li>
+				<% end %>
+			</ul>
+		</div>
+		</div>
+		<div id="blurb-col" class="col-sm-9">
+			<h1>Blurbs</h1>
+
+
+	    <% @blurbs.each do |blurb| %>
+	      <div class="blurb">
+	        <%= simple_format(blurb.content) %><% unless current_user == blurb.user %>
+	        <div class="author-box">
+		        <%= link_to blurb.user.full_name, blurb.user,class: "float-right author-name" %>
+		        <%= link_to "author", blurb.user,class: "float-right author" %>
+	        </div>
+	        <% end %>
+	        <div class="xxx"><span class="xxx"><em>XXX</em></span></div>
+	        <div class="blurb-tags">
+						<ul>
+							<% blurb.tag_list.each do |t| %>
+								<li class="tag"><span class="lg-gray-bg"><%= link_to t, tag_path(t) %></span></li>
+							<% end %>		
+						</ul>
+					</div>
+					<% if current_user == blurb.user %>
+	        	<%= link_to (fa_icon('pencil-alt')), edit_blurb_path(blurb), class: "edit-button btn btn-info" %>
+        	<% end %>
+	      </div>
+
+	        <%#= link_to 'Show', blurb %>	      
+	      
+	    <% end %>
+	   
+	 
+	  </div>
+
+	</div>
+</div>

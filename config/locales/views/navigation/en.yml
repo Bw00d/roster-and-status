@@ -1,0 +1,11 @@
+en:
+  navigation:
+    home: Home
+    users: Users
+    contact: Contact
+    sign-in: Log in
+    sign-up: Sign up
+    sign-out: Sign out
+    edit-profile: Edit profile
+    blurbs: Blurbs
+    pios: PIOs
