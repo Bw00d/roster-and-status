@@ -76,6 +76,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   # code coverage analysis tool
   gem 'simplecov', require: false
+  gem 'rb-readline'
 end
 
 group :development do

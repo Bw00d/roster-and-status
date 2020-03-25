@@ -33,7 +33,7 @@ Rails.application.configure do
   config.middleware.use ExceptionNotification::Rack,
                         email: {
                           email_prefix: '[EXCEPTION] ',
-                          sender_address: %[PIO Network" <bwoodreid@gmail.com>],
+                          sender_address: %[Alaska Team" <bwoodreid@gmail.com>],
                           exception_recipients: %w[bwoodreid@gmail.com]
                         }
 
@@ -107,7 +107,7 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per
   # environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "pio-network_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "ak-team_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

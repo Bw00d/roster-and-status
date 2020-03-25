@@ -13,11 +13,11 @@ default: &default
 
 development:
   <<: *default
-  database: pio-network_development
+  database: ak_team_development
 
 test:
   <<: *default
-  database: pio-network_test
+  database: ak_team_test
 
 production:
   <<: *default
@@ -48,11 +48,11 @@ production:
 #
 #development:
 #  <<: *default
-#  database: pio-network_development
+#  database: ak_team_development
 #
 #test:
 #  <<: *default
-#  database: pio-network_test
+#  database: ak_team_test
 #
 #production:
 #  <<: *default
