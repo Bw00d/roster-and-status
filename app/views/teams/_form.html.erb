@@ -1,0 +1,65 @@
+
+<%= display_validation_errors(@team) %>
+
+<div class="col-lg-6 center-block">
+  <div class="panel panel-default devise-bs center-block">
+    <div class="panel-heading">
+      <h4><%= t('.sign_up', default: "New Team") %></h4>
+    </div>
+    <div class="panel-body">
+    <%= form_with(model: team, local: true) do |form| %>
+
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :team_name, class: "form-control" %>
+      </div>
+      
+      <div class="field">
+        <%= form.label :lead %>
+        <%#= form.collection_select :lead, User.all, :id, :first_name, class: "form-control" %>
+        <%= form.select :lead, options_for_select(User.all.collect { | user | [user.first_name, user.id] }), {prompt: "CHOOSE LEAD"}, {class: "form-control"} %>
+      </div>
+
+      <div class="field">
+        <%= form.label :assistant %>
+        <%= form.select :assistant, options_for_select(User.all.collect { | user | [user.first_name, user.id] }), {prompt: "CHOOSE ASSISTANT"}, { class: "form-control" } %>
+      </div>
+
+      <div class="field">
+        <%= form.label :status %>
+        <%= form.select :status, [['Up On Ration', 'Up On Ration'], ['Available', 'Available'], ['Unavailable', 'Unavailable'], ['Assigned', 'Assigned']], {prompt: "SET STATUS"}, { id: "team-status", class: "form-control" } %>
+        <p id="demo"></p>
+      </div>
+
+      <div class="field if-assigned">
+        <%= form.label :location %>
+        <%= form.text_field :location, id: :team_location, class: "form-control" %>
+      </div>
+
+      <div class="field if-assigned">
+        <%= form.label :incident %>
+        <%= form.text_field :incident, id: :team_incident, class: "form-control" %>
+      </div>
+
+      
+      <%= form.label "Status Dates" %>
+      <div id="datepicker" class="field input-daterange input-group">
+        <%= form.text_field :date_up, id: :team_date_up, value: @team.date_up, class: "form-control" %>
+        <span class="input-group-addon">to</span>
+        <%= form.text_field :date_down, id: :team_date_down, value: @team.date_down,  class: "form-control" %>
+      </div>
+      </br>
+
+
+      <div class="actions">
+        <%= form.submit "SUBMIT", class: "btn btn-info" %>
+      </div>
+    <% end %>
+
+      </div>
+    </div>
+  </div>
+
+ <script type="text/javascript">
+   
+ </script>

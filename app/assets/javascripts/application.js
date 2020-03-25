@@ -21,6 +21,7 @@
 //= require select2
 //= require sweetalert2/dist/sweetalert2
 //= require font_awesome5
+//= require bootstrap-datepicker
 
 //= require_tree .
 //= require turbolinks

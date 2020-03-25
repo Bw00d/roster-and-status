@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div id="team-index" class="col-md-6 col-sm-12 center-block">
+    
+  <% @teams.each do |team| %>
+    <div>
+      <h1><%= team.name %></h1>
+      <h4><%= team.status %></h4>
+
+      <div>Leads <%= team.lead %></div>
+      <%= team.assistant %>
+      <%= team.location %>
+      <%= team.incident %>
+      <%= team.date_up %> - <%= team.date_down %>
+      <%= link_to 'Show', team %>
+      <%= link_to 'Edit', edit_team_path(team) %>
+      <%#= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>
+
+
+<%#= link_to 'New Team', new_team_path %>
