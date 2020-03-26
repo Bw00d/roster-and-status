@@ -33,7 +33,7 @@ Rails.application.configure do
   config.middleware.use ExceptionNotification::Rack,
                         email: {
                           email_prefix: '[EXCEPTION] ',
-                          sender_address: %[Alaska Team" <bwoodreid@gmail.com>],
+                          sender_address: %[Alaska Team PIOs" <bwoodreid@gmail.com>],
                           exception_recipients: %w[bwoodreid@gmail.com]
                         }
 
@@ -133,5 +133,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Heroku database URL
-  ENV["DATABASE_URL"] = "postgres://ispalnhfvzrrye:34f7f6668f15e89be7e5c75b98dac5c94d8fc5e753632f19d2661c813298bc95@ec2-50-17-194-186.compute-1.amazonaws.com:5432/d7a13kl04i74n1"
+  ENV["DATABASE_URL"] = "postgres://dcsypmpqaspvwd:e6a32db47a7bab07a6ef10819ab50c94818bcec9a7f4c7f647a2b798d0032f45@ec2-3-229-210-93.compute-1.amazonaws.com:5432/dntosduu47h4m"
 end
