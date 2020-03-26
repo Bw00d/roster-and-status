@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap-sass'
 # List of countries and their respective states and cities
 gem 'city-state'
-gem 'devise'
+gem "devise", ">= 4.7.1"
 # Generate fake user names, e-mails, adresses, IPs, lorem text, etc. Include
 # in all environments as we might use it to seed the DB in test deploys.
 gem 'faker'
@@ -57,6 +57,7 @@ gem 'aws-sdk-s3'
 gem 'jquery-validation-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'american_date'
+
 
 group :test do
   gem 'database_cleaner'
