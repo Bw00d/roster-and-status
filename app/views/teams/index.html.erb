@@ -35,9 +35,13 @@
       </div>
      <div class="panel-body">
       <div><strong>Type 1</strong></div>
-        <div>hello</div>
+        <% type_1_teams.each do |t|  %>
+          <div><%= t.display_trainees %></div>
+        <% end %>
       <div><strong>Type 2</strong></div>
-        <div>hello</div>
+        <% type_2_teams.each do |t|  %>
+          <div><%= t.display_trainees %></div>
+        <% end %>
      </div>
     </div>
   </div>
@@ -49,9 +53,15 @@
       </div>
      <div class="panel-body">
       <div><strong>Type 1 Team</strong></div>
-        <div>hello</div>
+        <% type_1_teams.each do |t|  %>
+          <div><%= t.display_alternates %></div>
+        <% end %>
+         
+          
       <div><strong>Type 2 Teams</strong></div>
-        <div>hello</div>
+        <% type_2_teams.each do |t|  %>
+          <div><%= t.display_alternates %></div>
+        <% end %>
      </div>
     </div>
   </div>

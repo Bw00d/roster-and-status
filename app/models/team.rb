@@ -37,7 +37,5 @@ class Team < ApplicationRecord
     end
     shared.join(", ")
   end
-  
-
 
 end
