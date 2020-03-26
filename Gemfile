@@ -57,7 +57,7 @@ gem 'aws-sdk-s3'
 gem 'jquery-validation-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'american_date'
-gem "rubyzip", ">= 1.3.0"
+gem "yard", ">= 0.9.20"
 
 
 group :test do
