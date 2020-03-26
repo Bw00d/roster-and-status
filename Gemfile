@@ -8,7 +8,7 @@ end
 gem 'pg', '~> 0.21.0'
 gem 'rails', '~> 5.1.7'
 # Use Puma as the app server
-gem 'puma', '~> 3.10'
+gem "puma", ">= 3.12.4"
 gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 gem 'uglifier', '~> 3.2'
 gem 'turbolinks', '~> 5.0', '>= 5.0.1'
@@ -57,7 +57,6 @@ gem 'aws-sdk-s3'
 gem 'jquery-validation-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'american_date'
-gem "yard", ">= 0.9.20"
 
 
 group :test do
