@@ -4,5 +4,39 @@
 #team-index {
   h1 {
     font-weight: 700;
+    a {
+      color: black;
+    }
   }
+  a:hover {
+    text-decoration: none;
+  }
+  h4 {
+    font-weight: 600;
+  }
+  .panel-body {
+    color: #092f55;
+  }
+}
+h1#team-name:hover {
+  text-decoration: underline !important;
+}
+.team-card {
+  margin-bottom: 25px;
+}
+.delete-button {
+  color: #A94442;
+}
+#shared-form {
+  display: none;
+}
+.inline {
+  display: inline-block;
+}
+.regular-text {
+  font-size: 2rem !important;
+  margin-top: 3px;
+}
+.btn-light {
+  background-color: #ddd;
 }

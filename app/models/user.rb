@@ -1,5 +1,6 @@
 # User model used for authentication by Devise
 class User < ApplicationRecord
+  
   # Use slugs instead of DB IDs in URLs
   include FriendlyId
   friendly_id :full_name, use: :slugged

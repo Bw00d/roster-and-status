@@ -56,6 +56,7 @@ gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk-s3'
 gem 'jquery-validation-rails'
 gem 'bootstrap-datepicker-rails'
+gem 'american_date'
 
 group :test do
   gem 'database_cleaner'

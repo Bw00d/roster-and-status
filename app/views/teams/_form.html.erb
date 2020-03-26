@@ -1,10 +1,9 @@
 
-<%= display_validation_errors(@team) %>
 
-<div class="col-lg-6 center-block">
+
   <div class="panel panel-default devise-bs center-block">
     <div class="panel-heading">
-      <h4><%= t('.sign_up', default: "New Team") %></h4>
+      <h4><%= t('.sign_up', default: "Team Info") %></h4>
     </div>
     <div class="panel-body">
     <%= form_with(model: team, local: true) do |form| %>
@@ -13,16 +12,21 @@
         <%= form.label :name %>
         <%= form.text_field :name, id: :team_name, class: "form-control" %>
       </div>
-      
+
       <div class="field">
-        <%= form.label :lead %>
-        <%#= form.collection_select :lead, User.all, :id, :first_name, class: "form-control" %>
-        <%= form.select :lead, options_for_select(User.all.collect { | user | [user.first_name, user.id] }), {prompt: "CHOOSE LEAD"}, {class: "form-control"} %>
+        <%= form.label(:aapl, "IC") %>
+        <%= form.text_field :ic, id: :team_ic, class: "form-control" %>
       </div>
 
       <div class="field">
-        <%= form.label :assistant %>
-        <%= form.select :assistant, options_for_select(User.all.collect { | user | [user.first_name, user.id] }), {prompt: "CHOOSE ASSISTANT"}, { class: "form-control" } %>
+        <%= form.label(:aapl,"Deputy IC") %>
+        <%= form.text_field :deputy_ic, id: :team_deputy_ic, class: "form-control" %>
+      </div>
+      
+      <div class="field">
+        <%= form.label(:aapl,"Lead PIO") %>
+        <%#= form.collection_select :lead, User.all, :id, :first_name, class: "form-control" %>
+        <%= form.select :lead, options_for_select(User.all.collect { | user | [user.first_name, user.id] }), {prompt: "CHOOSE LEAD"}, {class: "form-control"} %>
       </div>
 
       <div class="field">
@@ -43,10 +47,16 @@
 
       
       <%= form.label "Status Dates" %>
-      <div id="datepicker" class="field input-daterange input-group">
-        <%= form.text_field :date_up, id: :team_date_up, value: @team.date_up, class: "form-control" %>
-        <span class="input-group-addon">to</span>
-        <%= form.text_field :date_down, id: :team_date_down, value: @team.date_down,  class: "form-control" %>
+      <div class="row">
+        
+        <div class="field col-xs-6">
+          <%= form.text_field :date_up, id: :team_date_up, :data => {:provide => "datepicker"}, class: "form-control", placeholder: "START DATE" %>
+          <!-- <span class="input-group-addon">to</span> -->
+        </div>
+        <div class="field col-xs-6">
+          <%= form.text_field :date_down, id: :team_date_down, :data => {:provide => "datepicker"}, class: "form-control", placeholder: "END DATE" %>
+          
+        </div>
       </div>
       </br>
 
@@ -58,8 +68,8 @@
 
       </div>
     </div>
-  </div>
+
 
  <script type="text/javascript">
-   
+  
  </script>

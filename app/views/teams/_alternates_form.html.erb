@@ -1,0 +1,19 @@
+<div class="panel panel-default devise-bs center-block">
+  <div class="panel-heading">
+    <h4>Alternate Leads</h4>
+  </div>
+  <div class="panel-body">
+    <div>
+      <% @team.alternates.each do |u|  %>
+          <%= u.user.full_name %>  <% if current_user.admin? %><%= link_to (fa_icon('times-circle')), u, method: :delete, class: "delete-button" %><% end %></br>
+        <% end %>
+      </br>
+    </div>
+    <%= form_for @alternate do |f| %>
+      <div><%= f.select :user_id, options_for_select(User.all.collect { | user | [user.first_name, user.id] }), {prompt: "ADD ALTERNATE LEAD"}, { class: "form-control" } %></div>
+      <%= f.hidden_field :team_id, value: @team.id %>
+      <div><%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %></div>
+    <% end %>
+
+  </div>
+</div>

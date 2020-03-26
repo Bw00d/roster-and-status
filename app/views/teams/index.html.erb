@@ -1,23 +1,65 @@
-<p id="notice"><%= notice %></p>
 
-<div id="team-index" class="col-md-6 col-sm-12 center-block">
+<div id="team-index">
     
   <% @teams.each do |team| %>
-    <div>
-      <h1><%= team.name %></h1>
-      <h4><%= team.status %></h4>
+    <%= link_to team_path(team) do %>
+      <div class="col-lg-8 center-block">
+        <div class="panel panel-default devise-bs center-block">
+          <div class="panel-heading ">
+            <h1 id="team-name"><strong><%= team.name %></strong><span class="float-right regular-text"><%= team.status %></span></h1>
+          </div>
+          <div class="panel-body">
+            <% if team.date_up %>
+              <div class="float-right inline"><%= team.date_up.try(:strftime,'%b %e') %> - <%= team.date_down.try(:strftime,'%b %e, %Y') %></div>
+            <% end %>
+            <div>IC –  Norm McDonald</div>
+            <div>Primary –  <%= team.get_lead %></div>
+            <% if !team.shares.empty?  %>
+              <div>Shared  –  <%= team.display_shared %></div>
+            <% end %>
+            <% if team.status == "Assigned" %>
+              <div>Location  –  <%= team.location %></div>
+              <div>Incident  –  <%= team.incident %></div>
+            <% end %>
+            
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 
-      <div>Leads <%= team.lead %></div>
-      <%= team.assistant %>
-      <%= team.location %>
-      <%= team.incident %>
-      <%= team.date_up %> - <%= team.date_down %>
-      <%= link_to 'Show', team %>
-      <%= link_to 'Edit', edit_team_path(team) %>
-      <%#= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div class="col-lg-8 center-block">
+    <div class="panel panel-default devise-bs center-block">
+      <div class="panel-heading ">
+        <h1 id="team-name">Trainees</h1>
+      </div>
+     <div class="panel-body">
+      <div><strong>Type 1</strong></div>
+        <div>hello</div>
+      <div><strong>Type 2</strong></div>
+        <div>hello</div>
+     </div>
+    </div>
+  </div>
+
+  <div class="col-lg-8 center-block">
+    <div class="panel panel-default devise-bs center-block">
+      <div class="panel-heading ">
+        <h1 id="team-name">Alternate Leads</h1>
+      </div>
+     <div class="panel-body">
+      <div><strong>Type 1 Team</strong></div>
+        <div>hello</div>
+      <div><strong>Type 2 Teams</strong></div>
+        <div>hello</div>
+     </div>
+    </div>
+  </div>
+
+  <% if current_user.admin?  %>
+    <div class="col-lg-8 center-block">
+      <%= link_to 'New Team', new_team_path, class: 'btn btn-info tiny' %>
     </div>
   <% end %>
-</div>
 
-
-<%#= link_to 'New Team', new_team_path %>
+<div class="col-lg-6 center-block">

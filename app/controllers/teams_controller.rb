@@ -10,6 +10,11 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
+    @team = Team.find(params[:id])
+    @primary = Primary.new
+    @primaries = @team.primaries
+    @shares = @team.shares
+    @share = Share.new
   end
 
   # GET /teams/new
@@ -19,6 +24,13 @@ class TeamsController < ApplicationController
 
   # GET /teams/1/edit
   def edit
+    @team = Team.find(params[:id])
+    @shares = @team.shares
+    @share = Share.new
+    @alternates = @team.alternates
+    @alternate = Alternate.new
+    @trainees = @team.trainees
+    @trainee = Trainee.new
   end
 
   # POST /teams
@@ -28,10 +40,10 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to @team, notice: 'Team was successfully created.' }
+        format.html { redirect_to @team }
         format.json { render :show, status: :created, location: @team }
       else
-        format.html { render :new }
+        format.html { redirect_to @team }
         format.json { render json: @team.errors, status: :unprocessable_entity }
       end
     end

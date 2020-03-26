@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :teams
   resources :blurbs
+  resources :primaries
+  resources :alternates
+  resources :trainees
+  resources :shares
   root to: 'home#index'
 
   devise_for :users, controllers: {
@@ -11,7 +15,12 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
-
+  namespace :teams do
+    resources :primaries
+    resources :alternates
+    resources :trainees
+    resources :shares
+  end
   resources :users, only: [:index, :show]
 
   # form_for is easier to use with a resourceful route

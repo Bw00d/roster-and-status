@@ -1,40 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="col-lg-8 center-block">
+  <div class="panel panel-default devise-bs center-block">
+    <div class="panel-heading ">
+      <h1><strong><%= @team.name %></strong><span class="float-right regular-text"><%= @team.status %></span></h1>
+    </div>
+    <div class="panel-body">
+      <% if @team.date_up %>
+        <div class="float-right inline"><%= @team.date_up.try(:strftime,'%b %e') %> - <%= @team.date_down.try(:strftime,'%b %e, %Y') %></div>
+      <% end %>
+      <p> Primary – <%= @team.get_lead %> </p>
 
-<p>
-  <strong>Lead:</strong>
-  <%= @team.lead %>
-</p>
+      <p> Shared  –  <%= @team.display_shared %> </p>
 
-<p>
-  <strong>Assistant:</strong>
-  <%= @team.assistant %>
-</p>
+      <p>Alternates  –  <%= @team.display_alternates %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @team.name %>
-</p>
+      <p>Trainees  –  <%= @team.display_trainees %></p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @team.status %>
-</p>
+      <% if @team.status == "Assigned" %>
+        <p>
+          Location  – <%= @team.location %>
+        </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @team.location %>
-</p>
-
-<p>
-  <strong>Incident:</strong>
-  <%= @team.incident %>
-</p>
-
-<p>
-  <strong>Date Status:</strong>
-  <%= @team.date_up %> - <%= @team.date_down %>
-</p>
+        <p>
+          Incident  –   <%= @team.incident %>
+        </p>
+      <% end %>
 
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+      <div>
+      </br>
+        <%= link_to (fa_icon('pencil-alt')), edit_team_path(@team), class: "btn edit-button btn-light" %> 
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,10 @@
-<h1>Editing Team</h1>
+<div class="col-lg-6 center-block">
+  <h1>Editing Team</h1>
 
-<%= render 'form', team: @team %>
+  <%= render 'form', team: @team %>
+  <%= render 'shared_form', team: @team %>
+  <%= render 'alternates_form', team: @team %>
+  <%= render 'trainees_form', team: @team %>
 
-<%= link_to 'Show', @team %> |
-<%= link_to 'Back', teams_path %>
+  <%= link_to 'Cancel', team_path(@team), class: 'btn btn-light' %>
+</div>

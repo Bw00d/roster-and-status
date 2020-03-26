@@ -11,9 +11,15 @@ $(document).on("turbolinks:load", function() {
     }
   });
 
-});
+  // display shared-lead-form
+  $('#add-shared').click(function() {
+    $('#add-shared').hide();
+    $('#shared-form').show();
+  });
+  // $('#shared-form').onsubmit(function(event) {
+  //   $('#shared-form').hide();
+  //   $('#add-shared').show();
+  //   event.preventDefault();
+  // })
 
-function myFunction() {
-  var x = document.getElementById("mySelect").value;
-  document.getElementById("demo").innerHTML = "You selected: " + x;
-}
+});
