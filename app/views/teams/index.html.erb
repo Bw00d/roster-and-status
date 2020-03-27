@@ -12,7 +12,8 @@
             <% if team.date_up %>
               <div class="float-right inline"><%= team.date_up.try(:strftime,'%b %e') %> - <%= team.date_down.try(:strftime,'%b %e, %Y') %></div>
             <% end %>
-            <div>IC –  <%= team.ic %>, Deputy –  <%= team.deputy_ic %></div>
+            <div>IC –  <%= team.ic %></div>
+            <div>Deputy IC –  <%= team.deputy_ic %></div>
             <div>Primary –  <%= team.get_lead %></div>
             <% if !team.shares.empty?  %>
               <div>Shared  –  <%= team.display_shared %></div>
