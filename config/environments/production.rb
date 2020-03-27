@@ -48,7 +48,10 @@ Rails.application.configure do
     :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
+    :only_path => true
   }
+  # Host for links sent via e-mail by Action Mailer
+   
 
   # Code is not reloaded between requests.
   config.cache_classes = true
