@@ -37,7 +37,7 @@ Rails.application.configure do
                           exception_recipients: %w[bwoodreid@gmail.com]
                         }
 
-  # Setup the mailer config
+   # Setup the mailer config
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
@@ -49,12 +49,6 @@ Rails.application.configure do
     :authentication => :plain,
     :enable_starttls_auto => true
   }
-  # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => Rails.application.secrets.domain_name }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-
 
   # Code is not reloaded between requests.
   config.cache_classes = true
