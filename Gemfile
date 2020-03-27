@@ -57,6 +57,7 @@ gem 'aws-sdk-s3'
 gem 'jquery-validation-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'american_date'
+ gem 'sendgrid-ruby'
 
 
 group :test do
@@ -111,6 +112,7 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere
   # in the code.
   gem 'web-console', '~> 3.5', '>= 3.5.1'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
