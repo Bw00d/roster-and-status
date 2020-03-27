@@ -11,19 +11,19 @@
 			  			</div>
 			  	
 			  			<div class="col-xs-5 text-right">
-			  				<%= user.display_status %>
+			  				<% if user.remote_only %><span class="remote-only">Remote Only  </span><% end %>  <%= user.display_status %>
 			  			</div>
 			  		</div>
 	  			</div>
 		  		<div class="row details-container">
 		  			
 		  			<div class="col-xs-10 col-xs-offset-1 white-bg pio-details">
-		  				<div class="tcard col-xs-12 col-sm-6">Agency:</br><span><%= user.agency %></span></div>
-		  				<div class="tcard col-xs-12 col-sm-6">Host:</br><span><%= user.host %></span></div>
-		  				<div class="tcard col-xs-12 col-sm-6">Location:</br><span><%= user.city_state %></span></div>
-		  				<div class="tcard col-xs-12 col-sm-6">Email:</br><span><%= user.email %></span></div>
-		  				<div class="tcard col-xs-12 col-sm-6">Cell Phone:</br><span><%= number_to_phone(user.phone) %></span></div>
-		  				<div class="tcard col-xs-12 col-sm-6">Work Phone:</br><span><%= number_to_phone(user.phone) %></span></div>
+		  				<div class="tcard col-xs-12 col-sm-6">Agency:  <span><%= user.agency %></span></div>
+		  				<div class="tcard col-xs-12 col-sm-6">Host:  <span><%= user.host %></span></div>
+		  				<div class="tcard col-xs-12 col-sm-6">Location:  <span><%= user.city_state %></span></div>
+		  				<div class="tcard col-xs-12 col-sm-6">Email:  <span><%= user.email %></span></div>
+		  				<div class="tcard col-xs-12 col-sm-6">Cell Phone:  <span><%= number_to_phone(user.phone) %></span></div>
+		  				<div class="tcard col-xs-12 col-sm-6">Work Phone:  <span><%= number_to_phone(user.phone) %></span></div>
 		  				<div class="tcard col-xs-12">Summary:<span><%= simple_format(user.summary) %></span></div>
 		  				<div class="tcard col-xs-12 blurb-tags">Skills:
 								<ul class="skills-tags">
