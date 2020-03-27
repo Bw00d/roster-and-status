@@ -38,4 +38,18 @@ class Team < ApplicationRecord
     shared.join(", ")
   end
 
+  def type_1
+    if self.complexity == "Type 1"
+      return true
+    else
+      return false
+    end
+  end
+  def type_2
+    if self.complexity == "Type 2"
+      return true
+    else
+      return false
+    end
+  end
 end

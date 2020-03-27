@@ -11,9 +11,50 @@
 
       <p> Shared  –  <%= @team.display_shared %> </p>
 
-      <p>Alternates  –  <%= @team.display_alternates %></p>
+      <% if @team.status == "Assigned" %>
+        <p>
+          Location  – <%= @team.location %>
+        </p>
 
-      <p>Trainees  –  <%= @team.display_trainees %></p>
+        <p>
+          Incident  –   <%= @team.incident %>
+        </p>
+      <% end %>
+
+
+    <div>
+      </br>
+      <%= link_to (fa_icon('pencil-alt')), edit_team_path(@team), class: "btn edit-button btn-light" %> 
+    </div>
+  </div>
+</div>
+ 
+
+  <div class="panel panel-default devise-bs center-block">
+    <div class="panel-heading ">
+      <h1><strong>Alternates & Trainees</strong></h1>
+    </div>
+    <div class="panel-body">
+      <% if @team.type_1  %>
+      <p>Alternates  – <%= display_type1_alternates %>
+      </p>
+      <% end %>
+
+      <% if @team.type_2  %>
+      <p>Alternates  – <%= display_type2_alternates %>
+      </p>
+      <% end %>
+
+      <% if @team.type_1  %>
+      <p>Trainees  – <%= display_type1_trainees %>
+  
+      </p>
+      <% end %>
+      
+      <% if @team.type_2  %>
+      <p>Trainees  – <%= display_type2_trainees %>
+      </p>
+      <% end %>
 
       <% if @team.status == "Assigned" %>
         <p>
@@ -27,11 +68,26 @@
 
 
       <div>
-      </br>
-        <%= link_to (fa_icon('pencil-alt')), edit_team_path(@team), class: "btn edit-button btn-light" %> 
       </div>
 
       </div>
     </div>
   </div>
+
+<div class="col-lg-8 center-block">
+  <div class="panel panel-default devise-bs center-block">
+    <div class="panel-heading ">
+      <h1><strong>Current Roster</strong><span class="float-right small-text"><%= @team.date_up.try(:strftime,'%b %e') %> - <%= @team.date_down.try(:strftime,'%b %e, %Y') %></span></h1>
+    </div>
+    <div class="panel-body">
+      
+      <p>Functionality Coming Soon!</p>
+
+
+    <div>
+      </br>
+      <%= link_to (fa_icon('pencil-alt')), 'javascript:;', class: "btn edit-button btn-light" %> 
+    </div>
+  </div>
 </div>
+   
