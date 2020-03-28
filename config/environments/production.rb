@@ -33,15 +33,15 @@ Rails.application.configure do
   config.middleware.use ExceptionNotification::Rack,
                         email: {
                           email_prefix: '[EXCEPTION] ',
-                          sender_address: %[Alaska Team PIOs" <bwoodreid@gmail.com>],
-                          exception_recipients: %w[bwoodreid@gmail.com]
+                          sender_address: %[Alaska Team PIOs" <bwoodreid@incidentresponselab.com>],
+                          exception_recipients: %w[bwoodreid@incidentresponselab.com]
                         }
 
    # Setup the mailer config
    # config/environments/production.rb
 
 config.action_mailer.delivery_method = :smtp
-host = 'example.com' #replace with your own url
+host = 'ak-team-pios.herokuapp.com' #replace with your own url
 config.action_mailer.default_url_options = { host: host }
 
 # SMTP settings for gmail
