@@ -38,18 +38,21 @@ Rails.application.configure do
                         }
 
    # Setup the mailer config
-   config.action_mailer.default_url_options = { :host => "ak-team-pios.herokuapp.com" }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.smtp_settings = {
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'ak-team-pios.herokuapp.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
+   # config/environments/production.rb
+
+config.action_mailer.delivery_method = :smtp
+host = 'example.com' #replace with your own url
+config.action_mailer.default_url_options = { host: host }
+
+# SMTP settings for gmail
+config.action_mailer.smtp_settings = {
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :user_name            => ENV['GMAIL_USERNAME'],
+  :password             => ENV['GMAIL_PASSWORD'],
+  :authentication       => "plain",
+  :enable_starttls_auto => true
+}
   # Host for links sent via e-mail by Action Mailer
    
 
