@@ -33,27 +33,22 @@ Rails.application.configure do
   config.middleware.use ExceptionNotification::Rack,
                         email: {
                           email_prefix: '[EXCEPTION] ',
-                          sender_address: %[Alaska Team PIOs" <bwoodreid@incidentresponselab.com>],
-                          exception_recipients: %w[bwoodreid@incidentresponselab.com]
+                          sender_address: %[Alaska Team PIOs" <bwoodreid@gmail.com>],
+                          exception_recipients: %w[bwoodreid@gmail.com]
                         }
 
    # Setup the mailer config
-   # config/environments/production.rb
-
-config.action_mailer.delivery_method = :smtp
-host = 'ak-team-pios.herokuapp.com' #replace with your own url
-config.action_mailer.default_url_options = { host: host }
-
-# SMTP settings for gmail
-config.action_mailer.smtp_settings = {
-  :address              => "smtp.gmail.com",
-  :port                 => 587,
-  :user_name            => ENV['GMAIL_USERNAME'],
-  :password             => ENV['GMAIL_PASSWORD'],
-  domain:               => 'gmail.com', 
-  :authentication       => "plain",
-  :enable_starttls_auto => true
-}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'ak-team-pios.herokuapp.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
   # Host for links sent via e-mail by Action Mailer
    
 
