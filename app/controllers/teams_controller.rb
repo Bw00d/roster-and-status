@@ -17,6 +17,7 @@ class TeamsController < ApplicationController
     @share = Share.new
     @roster = Roster.new
     @rosters = @team.rosters
+    @rostered_resource = RosteredResource.new
   end
 
   # GET /teams/new

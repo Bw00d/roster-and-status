@@ -11,4 +11,9 @@ $(document).on("turbolinks:load", function() {
     $('#edit-roster-form').show();
   });
 
+  $('#cancel-roster-edit').click(function() {
+    $('#edit-roster-button').show();
+    $('#edit-roster-form').hide();
+  });
+
 });

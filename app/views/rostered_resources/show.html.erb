@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @rostered_resource.user_id %>
+</p>
+
+<p>
+  <strong>Roster:</strong>
+  <%= @rostered_resource.roster_id %>
+</p>
+
+<%= link_to 'Edit', edit_rostered_resource_path(@rostered_resource) %> |
+<%= link_to 'Back', rostered_resources_path %>

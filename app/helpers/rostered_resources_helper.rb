@@ -1,0 +1,2 @@
+module RosteredResourcesHelper
+end

@@ -1,0 +1,27 @@
+<%= form_with(model: rostered_resource, local: true) do |form| %>
+  <% if rostered_resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rostered_resource.errors.count, "error") %> prohibited this rostered_resource from being saved:</h2>
+
+      <ul>
+      <% rostered_resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :rostered_resource_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :roster_id %>
+    <%= form.number_field :roster_id, id: :rostered_resource_roster_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

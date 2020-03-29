@@ -1,5 +1,7 @@
 class Roster < ApplicationRecord
   belongs_to :team
+  has_many :restered_resources
+  has_many :users, through: :rostered_resources
 
   def get_lead
     if self.lead

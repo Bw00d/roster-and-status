@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200328142521) do
+ActiveRecord::Schema.define(version: 20200329162352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 20200328142521) do
   create_table "primaries", force: :cascade do |t|
     t.integer "user_id"
     t.string "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rostered_resources", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "roster_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rostered_resources
   resources :rosters
   resources :teams
   resources :blurbs

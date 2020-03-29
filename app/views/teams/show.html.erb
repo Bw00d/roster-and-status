@@ -99,7 +99,10 @@
               <%= f.select :assistant, options_for_select(User.all.collect { | user | [user.full_name, user.id] }), {prompt: "CHOOSE ASSISTANT"}, { class: "form-control", required: true } %>
             </div>
             <%= f.hidden_field :team_id, value: @team.id %>
-            <div><%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %></div>
+            <div>
+              <%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %>
+              <%= link_to "CANCEL", 'javascript:;', id: 'cancel-roster-edit', class: "btn btn-light btn-tiny sm-margin-top " %>
+            </div>
           <% end %>
         </div>
       <div>
@@ -132,6 +135,7 @@
           </div>
           <%= f.hidden_field :team_id, value: @team.id %>
           <div><%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %></div>
+          
         <% end %>
       </div>
     <div>
