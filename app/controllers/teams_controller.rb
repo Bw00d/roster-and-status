@@ -15,6 +15,8 @@ class TeamsController < ApplicationController
     @primaries = @team.primaries
     @shares = @team.shares
     @share = Share.new
+    @roster = Roster.new
+    @rosters = @team.rosters
   end
 
   # GET /teams/new

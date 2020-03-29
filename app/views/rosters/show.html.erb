@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lead:</strong>
+  <%= @roster.lead %>
+</p>
+
+<p>
+  <strong>Assistant:</strong>
+  <%= @roster.assistant %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @roster.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @roster.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_roster_path(@roster) %> |
+<%= link_to 'Back', rosters_path %>

@@ -7,6 +7,7 @@ class Team < ApplicationRecord
   has_many :alternates
   has_many :users, through: :trainees
   has_many :trainees
+  has_many :rosters
 
   def get_lead
     if self.lead

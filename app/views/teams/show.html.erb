@@ -74,19 +74,67 @@
     </div>
   </div>
 
+  <!-- Current Roster Panel -->
+
+<% if !@team.rosters.blank?  %>
+  <div class="col-lg-8 center-block">
+    <div class="panel panel-default devise-bs center-block">
+      <div class="panel-heading ">
+        <h1><strong>Current Roster</strong></h1>
+      </div>
+      <div class="panel-body">
+        <div>
+          <p> Lead – <%= @rosters.last.get_lead %> </p>
+
+          <p> Assistant  –  <%= @rosters.last.get_assistant %> </p>
+        </div>
+        <div id="edit-roster-form">
+          <%= form_for @roster do |f| %>
+            <div class="field">
+              <%= f.label :lead %>
+              <%= f.select :lead, options_for_select(User.all.collect { | user | [user.full_name, user.id] }), { prompt: "CHOOSE LEAD" }, { class: "form-control", required: true } %>
+            </div>
+            <div class="field">
+              <%= f.label :assistant %>
+              <%= f.select :assistant, options_for_select(User.all.collect { | user | [user.full_name, user.id] }), {prompt: "CHOOSE ASSISTANT"}, { class: "form-control", required: true } %>
+            </div>
+            <%= f.hidden_field :team_id, value: @team.id %>
+            <div><%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %></div>
+          <% end %>
+        </div>
+      <div>
+        <div>
+          <%= link_to (fa_icon('pencil-alt')), 'javascript:;', id: "edit-roster-button", class: "btn edit-button btn-light" %> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<!-- New Roster Panel -->
+
 <div class="col-lg-8 center-block">
   <div class="panel panel-default devise-bs center-block">
     <div class="panel-heading ">
-      <h1><strong>Current Roster</strong><span class="float-right small-text"><%= @team.date_up.try(:strftime,'%b %e') %> - <%= @team.date_down.try(:strftime,'%b %e, %Y') %></span></h1>
+      <h1 id="new-roster-button"><strong>Add Roster</strong></h1>
     </div>
     <div class="panel-body">
-      
-      <p>Functionality Coming Soon!</p>
-
-
+      <div id="roster-form">
+        <%= form_for @roster do |f| %>
+          <div class="field">
+            <%= f.label :lead %>
+            <%= f.select :lead, options_for_select(User.all.collect { | user | [user.full_name, user.id] }), {prompt: "CHOOSE LEAD"}, { class: "form-control"} %>
+          </div>
+          <div class="field">
+            <%= f.label :assistant %>
+            <%= f.select :assistant, options_for_select(User.all.collect { | user | [user.full_name, user.id] }), {prompt: "CHOOSE ASSISTANT"}, { class: "form-control" } %>
+          </div>
+          <%= f.hidden_field :team_id, value: @team.id %>
+          <div><%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %></div>
+        <% end %>
+      </div>
     <div>
-      </br>
-      <%= link_to (fa_icon('pencil-alt')), 'javascript:;', class: "btn edit-button btn-light" %> 
     </div>
   </div>
 </div>
