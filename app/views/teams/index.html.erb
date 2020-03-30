@@ -31,10 +31,13 @@
 
   <div class="col-lg-8 center-block">
     <div class="panel panel-default devise-bs center-block">
-      <div class="panel-heading ">
-        <h1 id="team-name">Trainees</h1>
+      <div id="trainees-panel" class="panel-heading slidable">
+        <h1 id="team-name">Trainees
+        <span class="float-right toggle-icon angle-down"><%= fa_icon('angle-down') %></span>
+        <span class="float-right toggle-icon angle-up hidden"><%= fa_icon('angle-up') %></span>
+        </h1>
       </div>
-     <div class="panel-body">
+     <div class="panel-body slide-panel">
       <div><strong>Type 1</strong></div>
         <% type_1_teams.each do |t|  %>
           <div><%= t.display_trainees %></div>
@@ -49,10 +52,12 @@
 
   <div class="col-lg-8 center-block">
     <div class="panel panel-default devise-bs center-block">
-      <div class="panel-heading ">
-        <h1 id="team-name">Alternate Leads</h1>
+      <div id="alternate-leads" class="panel-heading slidable">
+        <h1 id="team-name">Alternate Leads
+        <span class="float-right toggle-icon angle-down"><%= fa_icon('angle-down') %></span>
+        <span class="float-right toggle-icon angle-up hidden"><%= fa_icon('angle-up') %></span></h1>
       </div>
-     <div class="panel-body">
+     <div class="panel-body slide-panel">
       <div><strong>Type 1 Team</strong></div>
         <% type_1_teams.each do |t|  %>
           <div><%= t.display_alternates %></div>
