@@ -43,6 +43,16 @@ $(document).on("turbolinks:load", function() {
     $("#alternates-panel").addClass('expanded');
     $("#alternates-panel").find('span').toggleClass('hidden');
   }
+  if (localStorage.getItem("alternate-leads") == "expanded") {
+    $("#alternate-leads").next('div').show();
+    $("#alternate-leads").addClass('expanded');
+    $("#alternate-leads").find('span').toggleClass('hidden');
+  }
+  if (localStorage.getItem("trainees-panel") == "expanded") {
+    $("#trainees-panel").next('div').show();
+    $("#trainees-panel").addClass('expanded');
+    $("#trainees-panel").find('span').toggleClass('hidden');
+  }
 
   // Slide panels
   $('.slidable').click(function(){
