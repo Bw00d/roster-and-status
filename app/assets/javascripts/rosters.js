@@ -33,11 +33,6 @@ $(document).on("turbolinks:load", function() {
   });
 
   // local storage
-  if (localStorage.getItem("new-roster-panel") == "expanded") {
-    $("#new-roster-panel").next('div').show();
-    $("#new-roster-panel").addClass('expanded');
-    $("#new-roster-panel").find('span').toggleClass('hidden');
-  }
   if (localStorage.getItem("current-roster-panel") == "expanded") {
     $("#current-roster-panel").next('div').show();
     $("#current-roster-panel").addClass('expanded');
