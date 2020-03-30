@@ -25,13 +25,15 @@ class RosteredResourcesController < ApplicationController
   # POST /rostered_resources.json
   def create
     @rostered_resource = RosteredResource.new(rostered_resource_params)
+    @roster = Roster.find(@rostered_resource.roster_id)
+    @team = Team.find(@roster.team.id)
 
     respond_to do |format|
       if @rostered_resource.save
-        format.html { redirect_to @rostered_resource, notice: 'Rostered resource was successfully created.' }
+        format.html { redirect_back(fallback_location: root_path)}
         format.json { render :show, status: :created, location: @rostered_resource }
       else
-        format.html { render :new }
+        format.html { redirect_back(fallback_location: root_path)}
         format.json { render json: @rostered_resource.errors, status: :unprocessable_entity }
       end
     end

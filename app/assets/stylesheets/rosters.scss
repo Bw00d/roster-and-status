@@ -1,6 +1,6 @@
-#roster-form {
+/*#roster-form {
   display: none;
-}
+}*/
 #edit-roster-form {
   display: none;
 }
@@ -8,4 +8,16 @@
   :hover {
     text-decoration: underline;
   }
+}
+.edit-roster-link:hover {
+    text-decoration: underline;
+}
+#add-rostered-resource {
+  display: none;
+}
+/*#new-roster-panel {
+  display: none;
+}*/
+.slide-panel {
+  display: none;
 }

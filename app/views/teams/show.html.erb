@@ -31,10 +31,13 @@
  
 
   <div class="panel panel-default devise-bs center-block">
-    <div class="panel-heading ">
-      <h1><strong>Alternates & Trainees</strong></h1>
+    <div id="alternates-panel" class="panel-heading slidable">
+      <h1><strong>Alternates & Trainees</strong>
+        <span class="float-right toggle-icon angle-up hidden"><%= fa_icon('angle-up') %></span>
+        <span class="float-right toggle-icon angle-up"><%= fa_icon('angle-down') %></span>
+      </h1>
     </div>
-    <div class="panel-body">
+    <div class="panel-body slide-panel">
       <% if @team.type_1  %>
       <p>Alternates  – <%= display_type1_alternates %>
       </p>
@@ -79,35 +82,52 @@
 <% if !@team.rosters.blank?  %>
   <div class="col-lg-8 center-block">
     <div class="panel panel-default devise-bs center-block">
-      <div class="panel-heading ">
-        <h1><strong>Current Roster</strong></h1>
+      <div id="current-roster-panel" class="panel-heading slidable">
+        <h1><strong>Current Roster</strong>
+          <span class="float-right toggle-icon angle-up hidden"><%= fa_icon('angle-up') %></span>
+        <span class="float-right toggle-icon angle-up"><%= fa_icon('angle-down') %></span>
+        </h1>
       </div>
-      <div class="panel-body">
+      <div class="panel-body slide-panel">
         <div>
-          <p> Lead – <%= @rosters.last.get_lead %> </p>
+          <p class='edit-roster-link'> Lead – <%= @rosters.last.get_lead %> </p>
 
-          <p> Assistant  –  <%= @rosters.last.get_assistant %> </p>
+          <p class='edit-roster-link'> Assistant  –  <%= @rosters.last.get_assistant %> </p>
+        </div>
+        <div>
+          <% @rosters.last.rostered_resources.each do |rr|  %>
+            <p><%= rr.user.full_name %></p>
+          <% end %>
         </div>
         <div id="edit-roster-form">
           <%= form_for @roster do |f| %>
-            <div class="field">
+            
               <%= f.label :lead %>
               <%= f.select :lead, options_for_select(User.all.collect { | user | [user.full_name, user.id] }), { prompt: "CHOOSE LEAD" }, { class: "form-control", required: true } %>
-            </div>
-            <div class="field">
+           
               <%= f.label :assistant %>
               <%= f.select :assistant, options_for_select(User.all.collect { | user | [user.full_name, user.id] }), {prompt: "CHOOSE ASSISTANT"}, { class: "form-control", required: true } %>
-            </div>
+           
             <%= f.hidden_field :team_id, value: @team.id %>
-            <div>
+            
               <%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %>
-              <%= link_to "CANCEL", 'javascript:;', id: 'cancel-roster-edit', class: "btn btn-light btn-tiny sm-margin-top " %>
-            </div>
+              <%= link_to "CANCEL", 'javascript:;', id: "cancel-roster-edit", class: "btn btn-light btn-tiny sm-margin-top " %>
+            
+          <% end %>
+        </div>
+        
+          <%= link_to "ADD TO ROSTER", 'javascript:;', id: 'add-to-roster', class: "btn btn-light btn-tiny sm-margin-top " %>
+        <div id="add-rostered-resource">
+          <%= form_for @rostered_resource do |rr| %>
+            <%= rr.select :user_id, options_for_select(User.all.collect { | user | [user.full_name, user.id] }), {prompt: "CHOOSE RESOURCE"}, { class: "form-control", required: true } %>
+            <%= rr.hidden_field :roster_id, value: @rosters.last.id %>
+            <%= rr.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %>
+            <%= link_to "CANCEL", 'javascript:;', id: 'cancel-add-rostered', class: "cancel-form btn btn-light btn-tiny sm-margin-top " %>
           <% end %>
         </div>
       <div>
         <div>
-          <%= link_to (fa_icon('pencil-alt')), 'javascript:;', id: "edit-roster-button", class: "btn edit-button btn-light" %> 
+          <%#= link_to (fa_icon('pencil-alt')), 'javascript:;', id: "edit-roster-button", class: "btn edit-button btn-light" %> 
         </div>
       </div>
     </div>
@@ -119,10 +139,13 @@
 
 <div class="col-lg-8 center-block">
   <div class="panel panel-default devise-bs center-block">
-    <div class="panel-heading ">
-      <h1 id="new-roster-button"><strong>Add Roster</strong></h1>
+    <div id="new-roster-panel" class="panel-heading slidable">
+      <h1 id="new-roster-button"><strong>New Roster</strong>
+        <span class="float-right toggle-icon angle-down"><%= fa_icon('angle-down') %></span>
+        <span class="float-right toggle-icon angle-up hidden"><%= fa_icon('angle-up') %></span>
+      </h1>
     </div>
-    <div class="panel-body">
+    <div class="panel-body slide-panel">
       <div id="roster-form">
         <%= form_for @roster do |f| %>
           <div class="field">
@@ -133,6 +156,7 @@
             <%= f.label :assistant %>
             <%= f.select :assistant, options_for_select(User.all.collect { | user | [user.full_name, user.id] }), {prompt: "CHOOSE ASSISTANT"}, { class: "form-control" } %>
           </div>
+
           <%= f.hidden_field :team_id, value: @team.id %>
           <div><%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %></div>
           
