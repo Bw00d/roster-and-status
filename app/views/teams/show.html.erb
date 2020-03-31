@@ -38,7 +38,7 @@
       </h1>
     </div>
     <div class="panel-body slide-panel">
-
+      
         <% if @team.type_1  %>
         <p>Alternates  – <%= display_type1_alternates %>
         </p>
@@ -59,9 +59,6 @@
         <p>Trainees  – <%= display_type2_trainees %>
         </p>
         <% end %>
-      <% else %>
-        <p>No Alternates or Trainees set.</p>
-      <% end %>
 
       <% if @team.status == "Assigned" %>
         <p>
@@ -71,7 +68,7 @@
         <p>
           Incident  –   <%= @team.incident %>
         </p>
-
+      <% end %>
 
 
       <div>
