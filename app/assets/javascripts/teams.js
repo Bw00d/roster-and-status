@@ -22,11 +22,23 @@ $(document).on("turbolinks:load", function() {
     $('#add-alternate').hide();
     $('#add-alternate-form').show();
   });
+
+  $('#cancel-add-alternate').click(function() {
+    $('#add-alternate').show();
+    $('#add-alternate-form').hide();
+  });
+
   // display trainees form
   $('#add-trainee').click(function() {
     $('#add-trainee').hide();
     $('#add-trainee-form').show();
   });
+
+  $('#cancel-add-trainee').click(function() {
+    $('#add-trainee').show();
+    $('#add-trainee-form').hide();
+  });
+
   // $('#shared-form').onsubmit(function(event) {
   //   $('#shared-form').hide();
   //   $('#add-shared').show();

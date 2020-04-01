@@ -61,7 +61,7 @@
             <%= f.label :complexity %>
             <%= f.select :complexity, [['Type 1', 'Type 1'], ['Type 2', 'Type 2']], {prompt: "SET TYPE"}, { class: "form-control" } %>
           </div>
-          <div><%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %></div>
+          <div><%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %>  <%= link_to "CANCEL", 'javascript:;', id: 'cancel-add-trainee', class: "btn btn-light btn-tiny sm-margin-top" %></div>
         <% end %>
       </div>
 
@@ -104,7 +104,7 @@
             <%= f.label :complexity %>
             <%= f.select :complexity, [['Type 1', 'Type 1'], ['Type 2', 'Type 2']], {prompt: "SET TYPE"}, { id: "team-complexity", class: "form-control" } %>
           </div>
-          <div><%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %></div>
+          <div><%= f.submit "ADD", class: "btn btn-info btn-tiny sm-margin-top " %>  <%= link_to "CANCEL", 'javascript:;', id: 'cancel-add-alternate', class: "btn btn-light btn-tiny sm-margin-top" %></div>
         <% end %>
       </div>
 
