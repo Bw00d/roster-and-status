@@ -33,8 +33,8 @@ Rails.application.configure do
   config.middleware.use ExceptionNotification::Rack,
                         email: {
                           email_prefix: '[EXCEPTION] ',
-                          sender_address: %[Alaska Team PIOs" <bwoodreid@gmail.com>],
-                          exception_recipients: %w[bwoodreid@gmail.com]
+                          sender_address: %[Alaska Team PIOs" <bwoodreid@incidentresponselab.com>],
+                          exception_recipients: %w[bwoodreid@incidentresponselab]
                         }
 
    # Setup the mailer config
@@ -80,6 +80,7 @@ Rails.application.configure do
   # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
   # `config/secrets.yml.key`.
   config.read_encrypted_secrets = true
+  config.require_master_key = true
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.

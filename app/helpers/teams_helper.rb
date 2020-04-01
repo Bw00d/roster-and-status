@@ -39,6 +39,12 @@ module TeamsHelper
     names.join(", ")
   end
 
+  def display_alternates(alternates)
+    alternates.map {|a| a.user.full_name }.join(", ")
+  end
 
+  def display_trainees(trainees)
+    trainees.map {|a| a.user.full_name }.join(", ")
+  end
 
 end

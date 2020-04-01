@@ -16,10 +16,23 @@ $(document).on("turbolinks:load", function() {
     $('#add-shared').hide();
     $('#shared-form').show();
   });
+
+  // display alternates form
+  $('#add-alternate').click(function() {
+    $('#add-alternate').hide();
+    $('#add-alternate-form').show();
+  });
+  // display trainees form
+  $('#add-trainee').click(function() {
+    $('#add-trainee').hide();
+    $('#add-trainee-form').show();
+  });
   // $('#shared-form').onsubmit(function(event) {
   //   $('#shared-form').hide();
   //   $('#add-shared').show();
   //   event.preventDefault();
   // })
+
+
 
 });

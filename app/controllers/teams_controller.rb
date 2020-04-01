@@ -5,6 +5,10 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = Team.all
+    @alternate = Alternate.new
+    @alternates = Alternate.all
+    @trainee = Trainee.new
+    @trainees = Trainee.all
   end
 
   # GET /teams/1
@@ -18,6 +22,8 @@ class TeamsController < ApplicationController
     @roster = Roster.new
     @rosters = @team.rosters
     @rostered_resource = RosteredResource.new
+    @alternates = Alternate.all
+    @trainees = Trainee.all
   end
 
   # GET /teams/new

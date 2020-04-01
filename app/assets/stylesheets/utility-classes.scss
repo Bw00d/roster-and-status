@@ -169,6 +169,14 @@
   display: none;
 }
 
+
+// Sized Divs
+
+.second-block {
+  min-height: 700px;
+}
+
+/* buttons*/
 .disabled-button,
 .disabled-button:active,
 .disabled-button:focus,
@@ -178,14 +186,6 @@
   pointer-events: none !important;
   cursor: not-allowed !important;
 }
-
-// Sized Divs
-
-.second-block {
-  min-height: 700px;
-}
-
-/* buttons*/
 
 .edit-button {
   padding-left: 9px !important;
@@ -220,4 +220,7 @@
   text-align: center;
   overflow: hidden;
   position: relative;
+}
+.add-link:hover {
+  background-color: #DDD;
 }

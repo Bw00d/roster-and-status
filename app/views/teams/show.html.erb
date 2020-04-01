@@ -40,23 +40,23 @@
     <div class="panel-body slide-panel">
       
         <% if @team.type_1  %>
-        <p>Alternates  – <%= display_type1_alternates %>
+        <p>Alternates  – <%= display_alternates(@alternates.type_1) %>
         </p>
         <% end %>
 
         <% if @team.type_2  %>
-        <p>Alternates  – <%= display_type2_alternates %>
+        <p>Alternates  – <%= display_alternates(@alternates.type_2) %>
         </p>
         <% end %>
 
         <% if @team.type_1  %>
-        <p>Trainees  – <%= display_type1_trainees %>
+        <p>Trainees  – <%= display_trainees(@trainees.type_1) %>
     
         </p>
         <% end %>
         
         <% if @team.type_2  %>
-        <p>Trainees  – <%= display_type2_trainees %>
+        <p>Trainees  – <%= display_trainees(@trainees.type_s) %>
         </p>
         <% end %>
 
@@ -117,7 +117,7 @@
           <% end %>
         </div>
         
-          <%= link_to "ADD TO ROSTER", 'javascript:;', id: 'add-to-roster', class: "btn btn-light btn-tiny sm-margin-top " %>
+          <%= link_to "ADD TO ROSTER", 'javascript:;', id: 'add-to-roster', class: "btn add-link btn-tiny sm-margin-top " %>
         <div id="add-rostered-resource">
           <%= form_for @rostered_resource do |rr| %>
             <%= rr.select :user_id, options_for_select(User.all.collect { | user | [user.full_name, user.id] }), {prompt: "CHOOSE RESOURCE"}, { class: "form-control", required: true } %>
