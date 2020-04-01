@@ -11451,75 +11451,66 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus {
   margin-left: -5px;
   margin-right: -5px;
 }
-/* line 4, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
-.edit-button {
-  padding-left: 9px !important;
-  text-align: center;
-  font-size: 1.2em !important;
-  -moz-border-radius: 20px/20px !important;
-  -webkit-border-radius: 20px 20px !important;
-  border-radius: 20px/20px !important;
-  width: 35px;
-  height: 35px;
-  color: black;
-}
-
-/* line 17, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 6, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 #hash-col ul {
   padding-left: 0;
 }
 
-/* line 24, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/*#fixed-until {
+position:fixed; top:10; 
+left: 10;
+}*/
+/* line 14, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 #blurb-hash-holder {
   margin-top: 45px;
   min-height: 500px;
 }
-/* line 27, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 17, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 #blurb-hash-holder h1 {
   font-weight: 600;
   margin-bottom: 20px;
 }
 
-/* line 33, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 23, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 .dashed {
   border: dashed 1px orange;
 }
 
-/* line 37, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 27, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 .blurb {
   margin-bottom: 20px;
 }
 
-/* line 41, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 31, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 .tag {
   list-style: none;
   padding-bottom: 3px;
 }
-/* line 43, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 33, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 .tag span {
   padding: 2px 6px;
 }
 
-/* line 49, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 39, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 body.blurbs-controller.index-action .navbar-default {
   background-color: #f2f2f2;
   border-bottom: none;
 }
 
-/* line 55, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 45, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 .blurb-tags li {
   display: inline-block;
   margin-right: 5px;
 }
 
-/* line 60, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 50, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 #new-blurb {
   float: right;
   right: 10px;
   z-index: 2;
 }
 
-/* line 66, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 56, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 #new-blurb-button {
   position: fixed;
   display: block;
@@ -11533,12 +11524,12 @@ body.blurbs-controller.index-action .navbar-default {
   padding-right: 10px;
 }
 
-/* line 78, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 68, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 .author-name {
   display: none;
 }
 
-/* line 81, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
+/* line 71, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/blurbs.scss */
 .xxx {
   text-align: center !important;
   margin-top: 0;
@@ -11572,6 +11563,11 @@ body.blurbs-controller.index-action .navbar-default {
 /* line 16, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/colors.css.scss */
 .drk-gray-bg {
   background-color: #6F777D;
+}
+
+/* line 19, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/colors.css.scss */
+.aqua {
+  background-color: #60c1dd;
 }
 /* line 34, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/global.scss */
 .page-header {
@@ -11850,6 +11846,36 @@ a.signup-button {
 #home-subfooter li {
   list-style: none;
 }
+/*#roster-form {
+  display: none;
+}*/
+/* line 5, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/rosters.scss */
+#edit-roster-form {
+  display: none;
+}
+
+/* line 9, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/rosters.scss */
+#new-roster-button :hover {
+  text-decoration: underline;
+}
+
+/* line 13, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/rosters.scss */
+.edit-roster-link:hover {
+  text-decoration: underline;
+}
+
+/* line 16, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/rosters.scss */
+#add-rostered-resource {
+  display: none;
+}
+
+/*#new-roster-panel {
+  display: none;
+}*/
+/* line 22, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/rosters.scss */
+.slide-panel {
+  display: none;
+}
 /* line 1, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/teams.scss */
 .if-assigned {
   display: none;
@@ -11908,8 +11934,32 @@ h1#team-name:hover {
 }
 
 /* line 40, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/teams.scss */
+.small-text {
+  font-size: .75em !important;
+  margin-top: 7px;
+}
+
+/* line 44, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/teams.scss */
 .btn-light {
   background-color: #ddd;
+}
+
+/* line 47, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/teams.scss */
+.toggle-icon {
+  font-size: 1.2em;
+  margin-top: 3px;
+  margin-right: 3px;
+}
+
+/* Forms */
+/* line 53, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/teams.scss */
+#add-alternate-form {
+  display: none;
+}
+
+/* line 56, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/teams.scss */
+#add-trainee-form {
+  display: none;
 }
 /* line 2, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/users.css.scss */
 #users-page .avatar {
@@ -12438,7 +12488,13 @@ dt, dd {
   display: none;
 }
 
-/* line 172, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/utility-classes.scss */
+/* line 175, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/utility-classes.scss */
+.second-block {
+  min-height: 700px;
+}
+
+/* buttons*/
+/* line 180, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/utility-classes.scss */
 .disabled-button,
 .disabled-button:active,
 .disabled-button:focus,
@@ -12449,7 +12505,46 @@ dt, dd {
   cursor: not-allowed !important;
 }
 
-/* line 184, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/utility-classes.scss */
-.second-block {
-  min-height: 700px;
+/* line 190, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/utility-classes.scss */
+.edit-button {
+  padding-left: 9px !important;
+  /*padding-top: 8px !important;*/
+  text-align: center;
+  font-size: 1.2em !important;
+  -moz-border-radius: 20px/20px !important;
+  -webkit-border-radius: 20px 20px !important;
+  border-radius: 20px/20px !important;
+  width: 35px;
+  height: 35px;
+  color: black;
+}
+
+/* line 203, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/utility-classes.scss */
+.new-button {
+  margin-left: -6px !important;
+  margin-top: -1px;
+  font-size: 2.5em !important;
+  font-weight: 500;
+  color: black;
+  line-height: 15px;
+}
+
+/* line 211, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/utility-classes.scss */
+.new-button-back {
+  padding-left: -10px !important;
+  padding-top: -15px !important;
+  -moz-border-radius: 20px/20px !important;
+  -webkit-border-radius: 20px 20px !important;
+  border-radius: 20px/20px !important;
+  width: 35px;
+  height: 35px;
+  background-color: #ddd;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 224, /Users/bwood/code/rails/5.1/ak-info-shop/app/assets/stylesheets/utility-classes.scss */
+.add-link:hover {
+  background-color: #DDD;
 }

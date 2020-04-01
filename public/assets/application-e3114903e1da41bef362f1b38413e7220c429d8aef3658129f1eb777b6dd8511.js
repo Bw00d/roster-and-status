@@ -25942,6 +25942,85 @@ $(document).on("turbolinks:load", function() {
     // Select2 dropdowns
     $('.select2-dropdown').select2();
 });
+// Place all the behaviors and hooks related to the matching controller here.
+// All this logic will automatically be available in application.js.
+;
+$(document).on("turbolinks:load", function() {
+
+
+  // display roster form
+  $('#new-roster-button').click(function() {
+    $('#roster-form').show();
+  });
+
+  // $('#edit-roster-button').click(function() {
+  //   $('#edit-roster-button').hide();
+  //   $('#edit-roster-form').show();
+  // });
+
+  $('.edit-roster-link').click(function() {
+    $('#edit-roster-button').hide();
+    $('#edit-roster-form').toggle();
+  });
+
+  $('#cancel-roster-edit').click(function() {
+    $('#edit-roster-button').show();
+    $('#edit-roster-form').hide();
+  });
+
+  $('#add-to-roster').click(function() {
+    $('#add-rostered-resource').show();
+    $('#add-to-roster').hide();
+  });
+
+
+  $('#cancel-add-rostered').click(function() {
+    $('#add-rostered-resource').hide();
+    $('#add-to-roster').show();
+  });
+
+  // local storage
+  if (localStorage.getItem("current-roster-panel") == "expanded") {
+    $("#current-roster-panel").next('div').show();
+    $("#current-roster-panel").addClass('expanded');
+    $("#current-roster-panel").find('span').toggleClass('hidden');
+  }
+  if (localStorage.getItem("alternates-panel") == "expanded") {
+    $("#alternates-panel").next('div').show();
+    $("#alternates-panel").addClass('expanded');
+    $("#alternates-panel").find('span').toggleClass('hidden');
+  }
+  if (localStorage.getItem("alternate-leads") == "expanded") {
+    $("#alternate-leads").next('div').show();
+    $("#alternate-leads").addClass('expanded');
+    $("#alternate-leads").find('span').toggleClass('hidden');
+  }
+  if (localStorage.getItem("trainees-panel") == "expanded") {
+    $("#trainees-panel").next('div').show();
+    $("#trainees-panel").addClass('expanded');
+    $("#trainees-panel").find('span').toggleClass('hidden');
+  }
+
+  // Slide panels
+  $('.slidable').click(function(){
+    $(this).closest('span').hide();
+      var div = $(this).attr("id");
+      if ($(this).hasClass('expanded')) {
+        $(this).removeClass('expanded');
+        localStorage.setItem(div, "closed");
+        $(this).next('.slide-panel').slideUp();
+        $(this).find('span').toggleClass('hidden');
+      } 
+      else {
+      $(this).next('.slide-panel').slideDown();
+      localStorage.setItem(div, "expanded");
+      $(this).addClass('expanded');
+      $(this).find('span').toggleClass('hidden');
+     
+      }
+    });
+
+});
 $(document).on("turbolinks:load", function() {
   // date picker
   $('.input-daterange').datepicker({
@@ -25960,11 +26039,24 @@ $(document).on("turbolinks:load", function() {
     $('#add-shared').hide();
     $('#shared-form').show();
   });
+
+  // display alternates form
+  $('#add-alternate').click(function() {
+    $('#add-alternate').hide();
+    $('#add-alternate-form').show();
+  });
+  // display trainees form
+  $('#add-trainee').click(function() {
+    $('#add-trainee').hide();
+    $('#add-trainee-form').show();
+  });
   // $('#shared-form').onsubmit(function(event) {
   //   $('#shared-form').hide();
   //   $('#add-shared').show();
   //   event.preventDefault();
   // })
+
+
 
 });
 $( document ).on('turbolinks:load', function() {
