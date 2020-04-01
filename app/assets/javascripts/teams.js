@@ -19,23 +19,23 @@ $(document).on("turbolinks:load", function() {
 
   // display alternates form
   $('#add-alternate').click(function() {
-    $('#add-alternate').hide();
+    $('#display-alternates').hide();
     $('#add-alternate-form').show();
   });
 
   $('#cancel-add-alternate').click(function() {
-    $('#add-alternate').show();
+    $('#display-alternates').show();
     $('#add-alternate-form').hide();
   });
 
   // display trainees form
   $('#add-trainee').click(function() {
-    $('#add-trainee').hide();
+    $('#display-trainees').hide();
     $('#add-trainee-form').show();
   });
 
   $('#cancel-add-trainee').click(function() {
-    $('#add-trainee').show();
+    $('#display-trainees').show();
     $('#add-trainee-form').hide();
   });
 

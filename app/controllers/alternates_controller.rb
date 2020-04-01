@@ -15,11 +15,10 @@ class AlternatesController < ApplicationController
 
   def destroy
     @alternate = Alternate.find(params[:id])
-    @team = Team.find(@alternate.team_id)
 
     @alternate.destroy
     respond_to do |format|
-      format.html { redirect_to team_path(@team) }
+      format.html { redirect_to teams_path }
       format.json { head :no_content }
     end
   end

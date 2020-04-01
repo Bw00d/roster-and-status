@@ -38,21 +38,41 @@
         </h1>
       </div>
      <div class="panel-body slide-panel">
-      <div>
-        <strong>Type 1</strong>
-      </div>
+      <div id="display-trainees">
         <div>
-          <%= display_trainees(@trainees.type_1) %>
-          </div>
-      <div>
-        <strong>Type 2</strong>
+          <strong>Type 1</strong>
+        </div>
+          <div>
+            <%= display_trainees(@trainees.type_1) %>
+            </div>
+        <div>
+          <strong>Type 2</strong>
+        </div>
+        <div>
+          <%= display_trainees(@trainees.type_2) %>
+        </div>
+        <div>
+          <%= submit_tag "ADD", id: 'add-trainee', class: "btn add-link sm-margin-top " %>
+        </div>
       </div>
-      <div>
-        <%= display_trainees(@trainees.type_2) %>
-      </div>
-      <div><%= submit_tag "ADD", id: 'add-trainee', class: "btn add-link sm-margin-top " %></div>
       <div id="add-trainee-form">
         <%= form_for @trainee do |f| %>
+          <div>
+            <strong>Type 1</strong>
+          </div>
+            <div>
+              <% @trainees.type_1.each do |t| %>
+                <%= t.user.full_name %> <%= link_to (fa_icon('times-circle')), t, method: :delete, class: "delete-button" %> 
+              <% end %>
+            </div>
+          <div>
+            <strong>Type 2</strong>
+          </div>
+          <div>
+            <% @trainees.type_2.each do |t| %>
+                <%= t.user.full_name %> <%= link_to (fa_icon('times-circle')), t, method: :delete, class: "delete-button" %>
+              <% end %>
+          </div>
           <div>
             <br>
             <%= f.label "trainee" %>
@@ -77,25 +97,43 @@
         <span class="float-right toggle-icon angle-up hidden"><%= fa_icon('angle-up') %></span></h1>
       </div>
      <div class="panel-body slide-panel">
-      <div>
-        <strong>Type 1 Team</strong>
-      </div>
-      <div>
-        <%= display_alternates(@alternates.type_1) %>
-      </div>
-              
-      <div>
-        <strong>Type 2 Teams</strong>
-      </div>
-        
-      <div>
-        <%= display_alternates(@alternates.type_2) %>
-      </div>
-        
 
-      <div><%= submit_tag "ADD", id: 'add-alternate', class: "btn add-link sm-margin-top " %></div>
+      <div id="display-alternates">
+        <div>
+          <strong>Type 1</strong>
+        </div>
+          <div>
+            <%= display_alternates(@alternates.type_1) %>
+            </div>
+        <div>
+          <strong>Type 2</strong>
+        </div>
+        <div>
+          <%= display_alternates(@alternates.type_2) %>
+        </div>
+        <div>
+          <%= submit_tag "ADD", id: 'add-alternate', class: "btn add-link sm-margin-top " %>
+        </div>
+      </div>
+      
       <div id="add-alternate-form">
         <%= form_for @alternate do |f| %>
+          <div>
+            <strong>Type 1</strong>
+          </div>
+            <div>
+              <% @alternates.type_1.each do |t| %>
+                <%= t.user.full_name %> <%= link_to (fa_icon('times-circle')), t, method: :delete, class: "delete-button" %> 
+              <% end %>
+            </div>
+          <div>
+            <strong>Type 2</strong>
+          </div>
+          <div>
+            <% @alternates.type_2.each do |t| %>
+                <%= t.user.full_name %> <%= link_to (fa_icon('times-circle')), t, method: :delete, class: "delete-button" %>
+              <% end %>
+          </div>
           <div>
             <br>
             <%= f.label "Alternate" %>
