@@ -17,7 +17,7 @@ class User < ApplicationRecord
   # form in the admin namespace). Validating again here will produce duplicated
   # error messages.
 
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, :status, presence: true
   # Custom password strength validation
   validate :password_strength
   validate :is_bot?
