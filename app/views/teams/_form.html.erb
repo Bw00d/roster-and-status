@@ -62,9 +62,13 @@
           
         </div>
       </div>
+      <div class="field">
+        <%= form.label :message %>
+        <%= form.text_area :message, id: :team_message, class: "form-control" %>
+      </div>
+
+
       </br>
-
-
       <div class="actions">
         <%= form.submit "SUBMIT", class: "btn btn-info" %>  <%= link_to "CANCEL", team_path(@team), id: 'cancel-roster-edit', class: "btn btn-light btn-tiny" %>
       </div>

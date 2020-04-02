@@ -22,7 +22,7 @@
       <% end %>
     <div>
       <div class="note">
-        This is where we can put information about team status so everyone has a clear picture. For instance, are we looking for a lead?
+        <%= simple_format(@team.message) %>
       </div>
       </br>
       <%= link_to (fa_icon('pencil-alt')), edit_team_path(@team), class: "btn edit-button btn-light" %> 
