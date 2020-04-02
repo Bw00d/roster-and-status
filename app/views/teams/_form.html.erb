@@ -15,7 +15,7 @@
 
       <div class="field">
         <%= form.label :complexity %>
-        <%= form.select :complexity, [['Type 1', 'Type 1'], ['Type 2', 'Type 2']], {prompt: "SET TYPE"}, { id: "team-complexity", class: "form-control" } %>
+        <%= form.select :complexity, [['Type 1', 'Type 1'], ['Type 2', 'Type 2'], @team.complexity], {prompt: "SET TYPE"}, { id: "team-complexity", class: "form-control" } %>
       </div>
 
       <div class="field">
@@ -31,12 +31,12 @@
       <div class="field">
         <%= form.label(:aapl,"Lead PIO") %>
         <%#= form.collection_select :lead, User.all, :id, :first_name, class: "form-control" %>
-        <%= form.select :lead, options_for_select(User.all.collect { | user | [user.full_name, user.id] }), {prompt: "CHOOSE LEAD"}, {class: "form-control"} %>
+        <%= form.select :lead, options_for_select(User.all.collect { | user | [user.full_name, user.id] }, @team.lead), {prompt: "CHOOSE LEAD"}, {class: "form-control"} %>
       </div>
 
       <div class="field">
         <%= form.label :status %>
-        <%= form.select :status, [['Up On Ration', 'Up On Ration'], ['Available', 'Available'], ['Unavailable', 'Unavailable'], ['Assigned', 'Assigned']], {prompt: "SET STATUS"}, { id: "team-status", class: "form-control" } %>
+        <%= form.select :status, [['Up On Ration', 'Up On Ration'], ['Available', 'Available'], ['Unavailable', 'Unavailable'], ['Assigned', 'Assigned'], @team.status], {prompt: "SET STATUS"}, { id: "team-status", class: "form-control" } %>
       </div>
 
       <div class="field if-assigned">
