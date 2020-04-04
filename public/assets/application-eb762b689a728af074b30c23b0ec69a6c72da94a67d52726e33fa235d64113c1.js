@@ -25952,6 +25952,10 @@ $(document).on("turbolinks:load", function() {
   $('#new-roster-button').click(function() {
     $('#roster-form').show();
   });
+  $('#cancel-new-roster').click(function() {
+    $(this).closest('.slide-panel').slideUp();
+  });
+
 
   // $('#edit-roster-button').click(function() {
   //   $('#edit-roster-button').hide();
@@ -25978,6 +25982,8 @@ $(document).on("turbolinks:load", function() {
     $('#add-rostered-resource').hide();
     $('#add-to-roster').show();
   });
+
+
 
   // local storage
   if (localStorage.getItem("current-roster-panel") == "expanded") {
@@ -26039,11 +26045,36 @@ $(document).on("turbolinks:load", function() {
     $('#add-shared').hide();
     $('#shared-form').show();
   });
+
+  // display alternates form
+  $('#add-alternate').click(function() {
+    $('#display-alternates').hide();
+    $('#add-alternate-form').show();
+  });
+
+  $('#cancel-add-alternate').click(function() {
+    $('#display-alternates').show();
+    $('#add-alternate-form').hide();
+  });
+
+  // display trainees form
+  $('#add-trainee').click(function() {
+    $('#display-trainees').hide();
+    $('#add-trainee-form').show();
+  });
+
+  $('#cancel-add-trainee').click(function() {
+    $('#display-trainees').show();
+    $('#add-trainee-form').hide();
+  });
+
   // $('#shared-form').onsubmit(function(event) {
   //   $('#shared-form').hide();
   //   $('#add-shared').show();
   //   event.preventDefault();
   // })
+
+
 
 });
 $( document ).on('turbolinks:load', function() {
