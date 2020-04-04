@@ -5,6 +5,10 @@ $(document).on("turbolinks:load", function() {
   $('#new-roster-button').click(function() {
     $('#roster-form').show();
   });
+  $('#cancel-new-roster').click(function() {
+    $(this).closest('.slide-panel').slideUp();
+  });
+
 
   // $('#edit-roster-button').click(function() {
   //   $('#edit-roster-button').hide();
