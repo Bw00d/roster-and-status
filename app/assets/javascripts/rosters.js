@@ -32,6 +32,8 @@ $(document).on("turbolinks:load", function() {
     $('#add-to-roster').show();
   });
 
+
+
   // local storage
   if (localStorage.getItem("current-roster-panel") == "expanded") {
     $("#current-roster-panel").next('div').show();
