@@ -58,7 +58,7 @@ class RosteredResourcesController < ApplicationController
   def destroy
     @rostered_resource.destroy
     respond_to do |format|
-      format.html { redirect_to rostered_resources_url, notice: 'Rostered resource was successfully destroyed.' }
+      format.html { redirect_back(fallback_location: root_path) }
       format.json { head :no_content }
     end
   end
