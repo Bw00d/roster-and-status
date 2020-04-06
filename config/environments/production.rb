@@ -161,3 +161,4 @@ Rails.application.configure do
 
   #Heroku database URL
   ENV["DATABASE_URL"] = "postgres://edjzekrnsxkvpr:5b77cfb78db1b5b0427bf39c0d5d0f1304cda67c2a8c539985aa275ba06ee8e6@ec2-52-201-55-4.compute-1.amazonaws.com:5432/daraikheaddsb3"
+end
