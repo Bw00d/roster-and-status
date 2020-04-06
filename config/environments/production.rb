@@ -160,5 +160,4 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Heroku database URL
-  ENV["DATABASE_URL"] = "postgres://dcsypmpqaspvwd:e6a32db47a7bab07a6ef10819ab50c94818bcec9a7f4c7f647a2b798d0032f45@ec2-3-229-210-93.compute-1.amazonaws.com:5432/dntosduu47h4m"
-end
+  ENV["DATABASE_URL"] = "postgres://edjzekrnsxkvpr:5b77cfb78db1b5b0427bf39c0d5d0f1304cda67c2a8c539985aa275ba06ee8e6@ec2-52-201-55-4.compute-1.amazonaws.com:5432/daraikheaddsb3"
