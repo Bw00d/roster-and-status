@@ -98,7 +98,7 @@
         </div>
         <div>
           <% @rosters.last.rostered_resources.each do |rr|  %>
-            <p><%= rr.user.full_name %>  <% if current_user.admin? %><%= link_to (fa_icon('times-circle')), rr, method: :delete, class: "delete-button" %><% end %><</p>
+            <p><%= rr.user.full_name %>  <% if current_user.admin? %><%= link_to (fa_icon('times-circle')), rr, method: :delete, class: "delete-button" %><% end %></p>
           <% end %>
         </div>
         <div id="edit-roster-form">
