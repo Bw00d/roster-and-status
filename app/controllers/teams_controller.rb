@@ -24,6 +24,7 @@ class TeamsController < ApplicationController
     @rostered_resource = RosteredResource.new
     @alternates = Alternate.all
     @trainees = Trainee.all
+    @current_roster = @team.rosters.last
   end
 
   # GET /teams/new

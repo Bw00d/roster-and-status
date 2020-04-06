@@ -91,6 +91,9 @@
         </h1>
       </div>
       <div class="panel-body slide-panel">
+        <% if @current_roster.start_date %>
+        <div class="float-right inline"><%= @current_roster.start_date.try(:strftime,'%b %e') %> - <%= @current_roster.end_date.try(:strftime,'%b %e, %Y') %></div>
+      <% end %>
         <div>
           <p class='edit-roster-link'> Lead – <%= @rosters.last.get_lead %> </p>
 
