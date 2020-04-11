@@ -12,15 +12,15 @@
             <% if team.date_up %>
               <div class="float-right inline"><%= team.date_up.try(:strftime,'%b %e') %> - <%= team.date_down.try(:strftime,'%b %e, %Y') %></div>
             <% end %>
-            <div>IC –  <%= team.ic %></div>
-            <div>Deputy IC –  <%= team.deputy_ic %></div>
-            <div>Primary –  <%= team.get_lead %></div>
+            <div><strong>IC</strong> –  <%= team.ic %></div>
+            <div><strong>Deputy IC</strong> –  <%= team.deputy_ic %></div>
+            <div><strong>Primary</strong> –  <%= team.get_lead %></div>
             <% if !team.shares.empty?  %>
-              <div>Shared  –  <%= team.display_shared %></div>
+              <div><strong>Shared</strong>  –  <%= team.display_shared %></div>
             <% end %>
             <% if team.status == "Assigned" %>
-              <div>Location  –  <%= team.location %></div>
-              <div>Incident  –  <%= team.incident %></div>
+              <div><strong>Location</strong>  –  <%= team.location %></div>
+              <div>Inc<strong></strong>ident  –  <%= team.incident %></div>
             <% end %>
             
             <div class="message">

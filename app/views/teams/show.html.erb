@@ -7,17 +7,17 @@
       <% if @team.date_up %>
         <div class="float-right inline"><%= @team.date_up.try(:strftime,'%b %e') %> - <%= @team.date_down.try(:strftime,'%b %e, %Y') %></div>
       <% end %>
-      <p> Primary – <%= @team.get_lead %> </p>
+      <p> <strong>Primary</strong> – <%= @team.get_lead %> </p>
 
-      <p> Shared  –  <%= @team.display_shared %> </p>
+      <p> <strong>Shared</strong>  –  <%= @team.display_shared %> </p>
 
       <% if @team.status == "Assigned" %>
         <p>
-          Location  – <%= @team.location %>
+          <strong>Location</strong>  – <%= @team.location %>
         </p>
 
         <p>
-          Incident  –   <%= @team.incident %>
+          <strong>Incident</strong>  –   <%= @team.incident %>
         </p>
       <% end %>
     <div>
@@ -41,33 +41,33 @@
     <div class="panel-body slide-panel">
       
         <% if @team.type_1  %>
-        <p>Alternates  – <%= display_alternates(@alternates.type_1) %>
+        <p><strong>Alternates</strong>  – <%= display_alternates(@alternates.type_1) %>
         </p>
         <% end %>
 
         <% if @team.type_2  %>
-        <p>Alternates  – <%= display_alternates(@alternates.type_2) %>
+        <p><strong>Alternates</strong>  – <%= display_alternates(@alternates.type_2) %>
         </p>
         <% end %>
 
         <% if @team.type_1  %>
-        <p>Trainees  – <%= display_trainees(@trainees.type_1) %>
+        <p><strong>Trainees</strong>  – <%= display_trainees(@trainees.type_1) %>
     
         </p>
         <% end %>
         
         <% if @team.type_2  %>
-        <p>Trainees  – <%= display_trainees(@trainees.type_2) %>
+        <p><strong>Trainees</strong>  – <%= display_trainees(@trainees.type_2) %>
         </p>
         <% end %>
 
       <% if @team.status == "Assigned" %>
         <p>
-          Location  – <%= @team.location %>
+          <strong>Location</strong>  – <%= @team.location %>
         </p>
 
         <p>
-          Incident  –   <%= @team.incident %>
+          <strong>Incident</strong>  –   <%= @team.incident %>
         </p>
       <% end %>
 
@@ -95,9 +95,9 @@
         <div class="float-right inline"><%= @current_roster.start_date.try(:strftime,'%b %e') %> - <%= @current_roster.end_date.try(:strftime,'%b %e, %Y') %></div>
       <% end %>
         <div>
-          <p class='edit-roster-link'> Lead – <%= @rosters.last.get_lead %> </p>
+          <p class='edit-roster-link'> <strong>Lead</strong> – <%= @rosters.last.get_lead %> </p>
 
-          <p class='edit-roster-link'> Assistant  –  <%= @rosters.last.get_assistant %> </p>
+          <p class='edit-roster-link'> <strong>Assistant</strong>  –  <%= @rosters.last.get_assistant %> </p>
         </div>
         <div>
           <% @rosters.last.rostered_resources.each do |rr|  %>
