@@ -32,6 +32,10 @@
     <%= f.label :last_name, class: "control-label" %>
       <%= f.text_field :last_name, class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label :status %>
+    <%= f.select :status, options_for_select([['Available', 1], ['On Assignment', 2], ['Unavailable', 3]], @user.status ), {prompt: ""}, { class: "form-control" }   %>
+</div>
   <div class=" form-group">
     <%= f.label :agency, class: "control-label" %>
       <%= f.text_field :agency, class: "form-control" %>
