@@ -2,7 +2,8 @@ $( document ).on('turbolinks:load', function() {
 
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
-	
+
+
 	$("div.pio-status:contains('Available')").addClass('available');
 	$("div.pio-status:contains('Unavailable')").addClass('unavailable');
 	$("div.pio-status:contains('On Assignment')").addClass('onassignment');
