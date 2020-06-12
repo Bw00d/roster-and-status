@@ -12,12 +12,12 @@
       <p> <strong>Shared</strong>  –  <%= @team.display_shared %> </p>
 
       <% if @team.status == "Assigned" %>
-        <p>
-          <strong>Location</strong>  – <%= @team.location %>
-        </p>
 
         <p>
           <strong>Incident</strong>  –   <%= @team.incident %>
+        </p>
+        <p>
+          <strong>Location</strong>  – <%= @team.location %>
         </p>
       <% end %>
     <div>
@@ -61,15 +61,7 @@
         </p>
         <% end %>
 
-      <% if @team.status == "Assigned" %>
-        <p>
-          <strong>Location</strong>  – <%= @team.location %>
-        </p>
-
-        <p>
-          <strong>Incident</strong>  –   <%= @team.incident %>
-        </p>
-      <% end %>
+      
 
 
       <div>
@@ -104,6 +96,7 @@
             <p><%= rr.user.full_name %>  <% if current_user.admin? %><%= link_to (fa_icon('times-circle')), rr, method: :delete, class: "delete-button" %><% end %></p>
           <% end %>
         </div>
+
         <div id="edit-roster-form">
           <%= form_for @roster do |f| %>
             
