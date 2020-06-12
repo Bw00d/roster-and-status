@@ -2,8 +2,8 @@
 class User < ApplicationRecord
   
   # Use slugs instead of DB IDs in URLs
-  # include FriendlyId
-  # friendly_id :full_name, use: :slugged
+  include FriendlyId
+  friendly_id :full_name, use: :slugged
 
   has_many :blurbs
   acts_as_taggable # Alias for acts_as_taggable_on :tags
