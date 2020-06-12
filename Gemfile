@@ -57,7 +57,8 @@ gem 'aws-sdk-s3'
 gem 'jquery-validation-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'american_date'
- gem 'sendgrid-ruby'
+gem 'sendgrid-ruby'
+gem 'best_in_place', '~> 3.0.1'
 
 
 group :test do

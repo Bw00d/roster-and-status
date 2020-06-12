@@ -11,7 +11,13 @@
 			  			</div>
 			  	
 			  			<div class="col-xs-5 text-right">
-			  				<% if user.remote_only %><span class="remote-only">Remote Only  </span><% end %>  <%= user.display_status %>
+			  				<% if user.remote_only %><span class="remote-only">Remote Only  </span><% end %>  
+                <% if current_user == user  %>
+                  <%= best_in_place user, :status, :as => :select, :collection => 
+                                [[1,'Available'], [2,'On Assignment'], [3, 'Unavailable']] %>
+                <% else %>
+                  <%= user.display_status %>
+                <% end %>
 			  			</div>
 			  		</div>
 	  			</div>

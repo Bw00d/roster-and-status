@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+
   namespace :admin do
     resources :users
   end
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
     resources :trainees
     resources :shares
   end
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :update]
 
   # form_for is easier to use with a resourceful route
   resources :contact_forms, only: [:create]
