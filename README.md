@@ -1,10 +1,12 @@
-#PIO Blurbs
+#Public Information Officer Roster and Status
 
 ## Summary
-This is an application for saving common messaging that can be shared among users. It has been developed for fire service Public Information Officers. Users create blurbs of common responses and messenging that can be reused to help keep messenging consistent. 
+This is an application for tracking the status of public information officers assigned to Incident Management Teams. It is currently specific to Information Command staff but could be expanded to be used by any Section of and incident management organization. 
 
 ## Features
-User can create blurbs and assign them hashtags so they are searchable by context and so that they can be shared with other users.
+Users can create teams and assign lead, assistent, and trainee public information officers. Rosters can be added to teams and users assigned to rosters.
+
+User can create blurbs to save and share messaging and assign them hashtags so they are searchable by context and so that they can be shared with other users.
 
 Users can create profiles and set their availability status so that Lead information officers who are looking for help can see who is available and make contact.
 
