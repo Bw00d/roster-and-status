@@ -1,4 +1,4 @@
-#Public Information Officer Roster and Status
+# Public Information Officer Roster and Status
 
 ## Summary
 This is an application for tracking the status of public information officers assigned to Incident Management Teams. It is currently specific to Information Command staff but could be expanded to be used by any Section of and incident management organization. 
